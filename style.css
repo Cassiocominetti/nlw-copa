@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'roboto', sans-serif;
+}
+
+:root {
+  --app-color-bg: #121214;
+  --card-color-bg: #1d1c19;
+  --all-color-yellow: #f7dd43;
+  --font-color-hour-day: #e1e1e6;
+  --line-color: #333238;
+}
+
+body.green {
+  background-image: url(./assets/bgGreen.svg);
+}
+
+body.yellow {
+  background-image: url(./assets/bgYellow.svg);
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: var(--app-color-bg);
+  background-image: url(./assets/bg.svg);
+  background-position-x: center;
+  background-position-y: -710px;
+}
+
+#app {
+  width: fit-content;
+  margin: 52px auto;
+}
+
+header {
+  margin-bottom: 63px;
+  text-align: center;
+}
+
+#cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.card {
+  padding: 32px 23px;
+  text-align: center;
+  background: var(--card-color-bg);
+  border-bottom: 2px solid var(--all-color-yellow);
+  border-radius: 6px;
+}
+
+.card h2 {
+  padding: 8px 16px;
+  border: 1px solid var(--all-color-yellow);
+  border-radius: 6px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 53px;
+  color: var(--all-color-yellow);
+  font-size: 24px;
+}
+
+.card h2 span {
+  color: var(--font-color-hour-day);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.card ul li + li {
+  padding-top: 24px;
+  border-top: 1px solid var(--line-color);
+}
+
+.card ul li strong {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--font-color-hour-day);
+  line-height: 125%;
+}
+
+.card h2:hover,
+.card ul li strong:hover,
+.card ul li img:hover {
+  transform: scale(1.1);
+}
+
+.card h2,
+.card ul li strong,
+.card ul li img {
+  transition: transform 0.5s;
+}
+
+.card {
+  animation: appear 1.5s;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 769px) {
+  #cards {
+    max-width: 750px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  #cards {
+    max-width: 1150px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  body {
+    background-image: url(./assets/bg1200up.svg);
+    
+  }
+}
